@@ -75,3 +75,5 @@ console.log("totalPrice:",Price,",", "totalCount:",Count);
 let reducePriceProduct = cart.reduce((acc, product) => acc + (product.unitPrice * product.quantity), 0);
 let reduceCountProduct = cart.reduce((acc, product) => acc + product.quantity, 0);
 console.log("totalPrice:",reducePriceProduct,",", "totalCount:",reduceCountProduct);
+
+
