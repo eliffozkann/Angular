@@ -77,3 +77,13 @@ let reduceCountProduct = cart.reduce((acc, product) => acc + product.quantity, 0
 console.log("totalPrice:",reducePriceProduct,",", "totalCount:",reduceCountProduct);
 
 
+//acc -- accumelator (birikim)
+let cartTotal = cart.reduce((acc,cartItem) =>
+    acc + cartItem.quantity * cartItem.unitPrice, 0
+    );
+let cartQuantityTotal = cart.reduce((acc, cartItem) => acc + cartItem.quantity, 0); // sondaki sıfır kaçtan toplamaya başlanması gerektiğini alır
+
+console.log(`Toplam Sepet Tutarı: ${cartTotal}, Sepette toplam ${cartQuantityTotal} adet ürün vardır`
+);
+
+console.log();
