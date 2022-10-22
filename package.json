@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node js_starter/lesson3.js"
+    "start": "node js_starter/restAndSpread.js"
   },
   "keywords": [],
   "author": "",
