@@ -1,4 +1,5 @@
 
+import Logger from "./logger.js";
 import { Users } from "./models.js";
 import { Questions } from "./models.js";
 import { Course } from "./models.js";
@@ -11,11 +12,13 @@ class HomeServices {
         this.courses = [];
         this.careers = [];
         this.questions = [];
+        this.logger = new Logger();
     }
 
     //Header
     addCareer(...info) {
         this.careers.push(...info);
+        this.logger.log("Yeni bir form dolduruldu ==> ");
     }
     listCareer() {
         console.log(this.careers)
@@ -23,6 +26,7 @@ class HomeServices {
 
     addQuestions(...Q) {
         this.questions.push(...Q);
+        this.logger.log("Yeni soru eklendi ==> ");
     }
     listQuestions() {
         console.log(this.questions)
@@ -35,6 +39,7 @@ class HomeServices {
     }
     addUsers(...U) {
         this.users.push(...U);
+        this.logger.log("Yeni kullanıcı kaydı oluşturuldu ==> ");
     }
     filterUser(filterData) {
         console.log(filterData !== undefined ? this.users.filter(filterData) : this.users);
@@ -47,6 +52,7 @@ class HomeServices {
     }
     addCourses(...C) {
         this.courses.push(...C);
+        this.logger.log("Yeni kurs kaydı yapıldı ==> ");
     }
     filterCourses(filterData) {
         console.log(filterData !== undefined ? this.courses.filter(filterData) : this.courses);

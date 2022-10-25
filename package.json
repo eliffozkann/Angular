@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node js_starter/OOP_hw/kodlamaioHP.js"
+    "start": "node js_starter/OOP_hw/services.js"
   },
   "keywords": [],
   "author": "",
