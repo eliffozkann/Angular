@@ -1,4 +1,4 @@
-function sizCevapVerin() {
+export function sizCevapVerin() { // farklı dosyalar görebilir export sayesinde
     return [10,20,30,40,50];
 }
 
@@ -9,8 +9,8 @@ function sum(number1, number2, number3) {
     return sum;
 }
 
-const cevaplariniz = sizCevapVerin();
-const result = sum(cevaplariniz); // 10,20,30,40,50undefinedundefined verir
+export const cevaplariniz = sizCevapVerin();
+const result = sum(cevaplariniz); // 10,20,30,40,50undefinedundefined verir, string olduğu için toplama yapmaz
 
 console.log(typeof result); //string verir
 
@@ -31,7 +31,7 @@ function sum2(...numbers) {
 
 
 function agv(cevapVerenKisiSayisi, ...numbers) {
-    return sum2(...numbers)/cevapVerenKisiSayisi;
+    return sum2(...numbers) / cevapVerenKisiSayisi;
 }
 
 
@@ -52,11 +52,17 @@ function sayMyName(...letters) {
     }
 }
 
-sayMyName(..."Ahmet");
+sayMyName(..."Ahmet"); // ismin başındaki 3 nokta olmasaydı alt alta harfleri döndiremezdi
+
 console.log();
-// sayMyName(...{first:"A", second:"h"}); //error verir
+
+// sayMyName(...{first:"A", second:"h"}); //error verir, objeler gezilemez, spread operatörü ile ayrılamaz
+
 sayMyName(...Object.values({first: "A", second: "H"}));//Object.values sayesinde hata vermedi
-// Object.entires --> hem key'i hem value yu alır
+
+// Object.entires --> hem key'i hem value yu alır, ikisini birlikte array olarak döner
+
+// SayMyName(...Object.keys({name:"Mehmtet", surname:"Kars"})); //key leri array haline getirip döner
 
 let instructor = {
     firstName: "Ahmet",
@@ -75,9 +81,10 @@ student = {
     // lastName: "Kavuk",
     ...student,
     ...learningTopic,
-};
+}; // student ve learningTopic object lerini birleştirdi, spread operatörü sayesinde
 
-// Object.assign(instructor, student) // ikisini birleştirir üsteki gibi
+// !!!!!! Object.assign(instructor, student) // ikisini birleştirir üsteki gibi
+
 learningTopic.topic.push("Angular");
 console.log(instructor);
 console.log(student);
