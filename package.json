@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
+
   "scripts": {
-    "start": "node js_starter/OOP_hw/services.js"
-  },
+    "start": "tsc typescript/main.ts && node typescript/main.js"
+  }, 
   "keywords": [],
   "author": "",
   "license": "ISC"
